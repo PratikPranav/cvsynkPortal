@@ -1,0 +1,141 @@
+/* Done by: Pratik Pranav ,  Date : 21/11/2024 */
+
+#container {
+    position: relative;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 5px gray;
+    margin: 10px 50px;
+    padding: 10px 30px;
+}
+/* -------------------------------- */
+
+.topBox{
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: lightgoldenrodyellow;
+}
+.topBox:hover{
+    h1{
+        background-color: lightblue;
+        translate: 20px 5px;
+    }
+    .cnl{
+        zoom: 1.1;
+    }
+}
+/* -------------------------------- */
+
+.cnl{
+    display: flex;
+    align-items: center;
+    
+}
+.company{
+    margin-right: 10px;
+}
+.location{
+    margin-right: 10px;
+}
+.location i{
+    margin-right: 3px;
+}
+
+/* -------------------------------- */
+hr {
+    margin: 30px 0;
+}
+
+.section:hover {
+    background-color: aqua;
+}
+
+/* -------------------------------- */
+.applyBtn {
+
+    width: 250px;
+    height: 50px;
+    font-size: 26px;
+    margin: 35px 40%;
+    background-color: lightblue;
+    padding: 0;
+    border-radius: 15px;
+    text-align: center;
+    /* display: block; */
+
+}
+
+.applyBtn:hover {
+    cursor: pointer;
+    background-color: rgb(89, 192, 226);
+    scale: 1.05;
+}
+
+/* -------------------------------- */
+
+/* ---------------responsive----------------- */
+
+ @media (max-width: 768px) {
+    h1 {
+        font-size: 22px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    .applyBtn {
+        width: 120px;
+        
+        height: 45px;
+        
+        font-size: 14px;
+        
+    }
+
+    #container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .section {
+        padding: 8px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .applyBtn {
+        
+        width: 100px;
+        height: 45px;
+        font-size: 14px;
+        margin: auto 30%;
+    }
+
+    .section {
+        padding: 5px;
+    }
+
+    ul {
+        padding-left: 10px;
+    }
+
+    #container {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    hr {
+        margin: 20px 0;
+    }
+   
+
+} 

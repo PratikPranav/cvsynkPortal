@@ -1,0 +1,212 @@
+<!-- Done by: Pratik Pranav ,  Date : 21/11/2024 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+
+        }
+
+        #container {
+            position: relative;
+            border: 2px solid black;
+            border-radius: 20px;
+            box-shadow: 0 0 5px gray;
+            margin: 10px 25%;
+            padding: 20px 10px;
+            background-color: aliceblue;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 10px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            background-color: aqua;
+        }
+        form:hover{
+            zoom: 1.01;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input:hover{
+            border: 1px solid black;
+        }
+        span{
+            font-size: 10px;
+        }
+        #resume{
+            margin-bottom: 0;
+        }
+
+        button {
+            display: block;
+            width: 50%;
+            margin: auto;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            scale: 1.1;
+        }
+
+        #info{
+            text-align: center;
+        }
+        #go{
+            text-align: center;
+        }
+
+        /* -----------------responsive---------------------- */
+
+        @media (max-width: 768px) {
+    #container {
+        padding: 20px;
+        margin: 20px;
+    }
+    form {
+        max-width: 100%; /* Allow form to expand on smaller screens */
+    }
+    button {
+        width: 70%; /* Increase button width for better touch targets */
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    label, input {
+        font-size: 12px;
+    }
+
+    button {
+        width: 80%; /* Make button take more width on small screens */
+    }
+
+    #container {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    span {
+        font-size: 8px; /* Smaller text size for better mobile experience */
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Job Application Form</h1>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your Full Name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="resume">Upload Resume:</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+            <span>*Only valid pdf and doc files are allowed</span>
+
+            <button type="submit">Submit</button>
+            
+        </form>
+        <p id="info" hidden>Already filled the form</p>
+        <a href="index.html" hidden id="go">Go back to home page</a>
+    </div>
+
+
+
+<!-- ----------------js code------------------------------ -->
+
+    <script>
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission until validation passes
+
+            const nameInput = document.getElementById("name").value.trim();
+            const emailInput = document.getElementById("email").value.trim();
+
+// name validations.........................
+
+            if (nameInput.length < 3 || nameInput.length > 50) {
+                alert("Name length must be between 3 to 50 characters.");
+                return; // Stop further execution if validation fails
+            }
+            const nameRegex = /^[a-zA-Z\s]+$/;
+            if (!nameRegex.test(nameInput)) {
+                alert("Name can only contain alphabets and spaces.");
+                return;
+            }
+
+// email validations...............................
+
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(emailInput)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+//after submit---------------------------------
+
+            alert("Form submitted successfully!");
+            form.reset();
+
+
+            let gobtn = document.getElementById("go");
+            let info = document.getElementById("info");
+            form.style.display = "none";
+            info.style.display = "block";
+            gobtn.style.display = "block";
+           
+
+        });
+
+    </script>
+</body>
+
+</html>
