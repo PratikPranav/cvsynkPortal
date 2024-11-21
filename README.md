@@ -1,5 +1,5 @@
-                                                ----------------------- A Job Application Portal -----------------------
-                                                       - Task for cvsynk company ( 91hr) - Frontend developer role
+      ----------------------- A Job Application Portal -----------------------
+           - Task for cvsynk company ( 91hr) - Frontend developer role
 
 Brief Description: 
  * This is a job portal website where users can find and apply for their matching jobs.
